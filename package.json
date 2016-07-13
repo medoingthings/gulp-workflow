@@ -35,9 +35,7 @@
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
     "run-sequence": "^1.1.5",
-    "webpack": "^1.13.0"
-  },
-  "devDependencies": {
+    "webpack": "^1.13.0",
     "webpack-stream": "^3.2.0"
   }
 }
