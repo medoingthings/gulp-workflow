@@ -1,0 +1,43 @@
+{
+  "name": "gulp-workflow",
+  "version": "0.1.0",
+  "description": "My personal flavored gulp workflow that I can reuse across projects",
+  "main": "gulpfile.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "workflow",
+    "build"
+  ],
+  "author": "Mark Rickert <mark@medoingthings.com>",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.10.0",
+    "del": "^2.2.0",
+    "extend": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-buster": "^1.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-modernizr": "0.0.0",
+    "gulp-newer": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sass-lint": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "run-sequence": "^1.1.5",
+    "webpack": "^1.13.0"
+  },
+  "devDependencies": {
+    "webpack-stream": "^3.2.0"
+  }
+}

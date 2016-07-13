@@ -1,0 +1,20 @@
+{
+  "boss":      true,
+  "node":      true,
+  "eqeqeq":    true,
+  "strict":    "global",
+  "newcap":    false,
+  "undef":     true,
+  "unused":    true,
+  "onecase":   true,
+  "lastsemic": true,
+  "globals": {
+      "document": true,
+      "history": true,
+      "location": true,
+      "Modernizr": true,
+      "navigator": true,
+      "picturefill": true,
+      "window": true
+  }
+}
