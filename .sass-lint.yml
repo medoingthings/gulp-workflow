@@ -17,6 +17,7 @@ rules:
 
   # Disallows
   no-color-keywords: 1
+  no-url-domains: 1
 
   # Should be enabled as soon as linting options can be turned off for certain files
   # https://github.com/sasstools/sass-lint/issues/70
@@ -36,6 +37,7 @@ rules:
     - 1
     -
       allow-element-with-attribute: true
+  attribute-quotes: 1
   no-trailing-zero: 1
   no-transition-all: 1
   no-url-protocols: 0
@@ -44,27 +46,29 @@ rules:
   property-units: 0
 
   # Nesting
+  declarations-before-nesting: 1
   force-attribute-nesting: 0
   force-element-nesting: 0
   force-pseudo-nesting: 0
 
-  attribute-quotes: 1
-  pseudo-element: 0
-
   # Name Formats
-  class-name-format: 0
+  class-name-format:
+    - 1
+    -
+      convention: hyphenatedbem
   function-name-format: 1
   id-name-format: 0
   mixin-name-format: 1
   placeholder-name-format: 1
   variable-name-format: 1
+  pseudo-element: 0
 
   # Style Guide
   bem-depth: 0
   border-zero: 1
   brace-style: 1
   clean-import-paths: 1
-  empty-args: 1
+  empty-args: 0
   hex-length: 1
   hex-notation: 1
   indentation:
