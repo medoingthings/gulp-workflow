@@ -102,7 +102,7 @@ module.exports = {
     options: {
       module: {
         loaders: [
-          { test: /\.js/, loader: 'imports?define=>false'}
+          { test: /\.js/, loader: 'imports-loader?define=>false'}
         ]
       },
       output: {
