@@ -19,6 +19,9 @@ The following gulp tasks are meant to be used for development and deployment:
 
 `gulp serve` identical to the watch task, but runs Browsersync, too. This automatically updates the browser when files change. `gulp serve --no-open` supresses the opening of a new browser window.
 
+### Icons
+An icon sprite is automatically generated from the svg files found in `assets/icons/` and moved to the `dist` folder.
+
 ### Sass-Sourcemaps
 
 Sourcemaps are deactivated by default (they increase build time). They can be activated with the `--sourcemaps` option. Examples:

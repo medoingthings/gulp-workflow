@@ -27,6 +27,7 @@ module.exports = function (gulp, gulpconfigLocal) {
   var runSequence = require('run-sequence').use(gulp);
   var sass = require('gulp-sass');
   var sassLint = require('gulp-sass-lint');
+  var svgSymbols = require('gulp-svg-symbols');
   var uglify = require('gulp-uglify');
   var webpack = require('webpack-stream');
 
@@ -48,6 +49,13 @@ module.exports = function (gulp, gulpconfigLocal) {
   gulp.task('copy:assets', function () {
   return gulp.src(gulpconfig.copy.assets.src)
     .pipe(gulp.dest(gulpconfig.copy.assets.dest));
+  });
+
+  // Output SVG sprite to reuse icons
+  gulp.task('generate:svg-sprite', function () {
+    return gulp.src(gulpconfig.icons.src)
+      .pipe(svgSymbols(gulpconfig.icons.options))
+      .pipe(gulp.dest(gulpconfig.icons.dest));
   });
 
   // Losslessly optimize only new images and move them to the dist folder
@@ -163,6 +171,7 @@ module.exports = function (gulp, gulpconfigLocal) {
 
     browserSync.init(gulpconfig.browsersync.options);
 
+    gulp.watch(gulpconfig.icons.src, ['generate:svg-sprite']);
     gulp.watch(gulpconfig.sass.src, ['sass:development', 'sasslint:development']);
     gulp.watch(gulpconfig.imagemin.src, ['imagemin:development']);
     gulp.watch(gulpconfig.javascript.all, ['javascript-watch', 'jshint:development', 'jscs:development']);
@@ -171,6 +180,7 @@ module.exports = function (gulp, gulpconfigLocal) {
 
   // Watching Sass and JavaScript files
   gulp.task('watch', ['build:development'], function() {
+    gulp.watch(gulpconfig.icons.src, ['generate:svg-sprite']);
     gulp.watch(gulpconfig.sass.src, ['sass:development', 'sasslint:development']);
     gulp.watch(gulpconfig.javascript.all, ['javascript-watch', 'jshint:development', 'jscs:development']);
     gulp.watch(gulpconfig.imagemin.src, ['imagemin:development']);
@@ -179,6 +189,7 @@ module.exports = function (gulp, gulpconfigLocal) {
   // Build files for development (uncompressed)
   gulp.task('build:development', [
   'copy:assets',
+  'generate:svg-sprite',
   'imagemin:development',
   'javascript:development',
   'javascript-predom:development',
@@ -192,6 +203,7 @@ module.exports = function (gulp, gulpconfigLocal) {
   gulp.task('build:production', function (callback) {
   runSequence('clean:production', [
     'copy:assets',
+    'generate:svg-sprite',
     'imagemin:production',
     'javascript:production',
     'javascript-predom:production',

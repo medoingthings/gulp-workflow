@@ -44,6 +44,13 @@ module.exports = {
     },
     dest: 'cms/public/dist/images'
   },
+  icons: {
+    options: {
+      id: 'icon-%f'
+    },
+    src: 'assets/icons/**/*.svg',
+    dest: 'cms/public/dist/icons'
+  },
   javascript: {
     all: 'components/**/*.js',
     src: 'components/*.js',
