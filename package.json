@@ -1,6 +1,6 @@
 {
   "name": "gulp-workflow",
-  "version": "0.1.0",
+  "version": "3.0.0",
   "description": "My personal flavored gulp workflow that I can reuse across projects",
   "main": "gulpfile.js",
   "private": true,
